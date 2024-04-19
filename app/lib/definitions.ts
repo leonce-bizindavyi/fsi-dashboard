@@ -3,7 +3,7 @@
 // For simplicity of teaching, we're manually defining these types.
 // However, these types are generated automatically if you're using an ORM such as Prisma.
 export type staf_table = {
-  Id_staf: Number,
+  Id_staf: string,
   uniid_staf: string,
   name_staff: string,
   pers_code: string,
@@ -16,12 +16,28 @@ export type staf_table = {
   create_at: string,
   update_at: string,
 }
+export type addPerson = {
+  email: string,
+  name: string,
+  period: string,
+  sexe: string,
+  date_naiss: string,
+  phone: string
+};
 export type User = {
-    id: string;
-    name: string;
-    email: string;
-    password: string;
-  };
+  Id_staf: Number,
+  uniid_staf: string,
+  name_staff: string,
+  pers_code: string,
+  image_url: string,
+  sexe: string,
+  date_naiss: string,
+  period: string,
+  email_st: string,
+  phone_st: string,
+  create_at: string,
+  update_at: string,
+};
 
 export type Customer = {
   id: string;

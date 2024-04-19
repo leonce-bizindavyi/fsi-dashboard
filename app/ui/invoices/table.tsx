@@ -68,8 +68,8 @@ export default async function InvoicesTable({
                     <p>{joursEntreDates(staff.date_naiss)} Years</p>
                   </div>
                   <div className="flex justify-end gap-2">
-                    {/* <UpdateInvoice id={invoice.id} />
-                    <DeleteInvoice id={invoice.id} /> */}
+                    <UpdateInvoice id={staff.Id_staf} />
+                    <DeleteInvoice id={staff.Id_staf} /> 
                   </div>
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default async function InvoicesTable({
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  Customer
+                  Staff Member
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
                   Email
@@ -93,8 +93,8 @@ export default async function InvoicesTable({
                 <th scope="col" className="px-3 py-5 font-medium">
                   Sexe
                 </th>
-                <th scope="col" className="relative py-3 pl-6 pr-3">
-                  <span className="sr-only">Edit</span>
+                <th scope="col" className="ml-5 px-3 py-5 font-medium">
+                  Action
                 </th>
               </tr>
             </thead>
@@ -130,8 +130,8 @@ export default async function InvoicesTable({
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      {/* <UpdateInvoice id={invoice.id} />
-                      <DeleteInvoice id={invoice.id} /> */}
+                    <UpdateInvoice id={staff.uniid_staf} />
+                    <DeleteInvoice id={staff.Id_staf} /> 
                     </div>
                   </td>
                 </tr>

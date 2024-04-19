@@ -42,7 +42,20 @@ export async function fetchLastestStaffs() {
     throw new Error('Failed to fetch staf_table data.');
   }
 }
+export async function fetchStaffsById(id:string) {
+  noStore()
 
+  try {
+
+    const data = await sql<staf_table>`SELECT * FROM staf_table WHERE uniid_staf=${id}`;
+
+    // console.log('Data fetch completed after 3 seconds.');
+    return data.rows[0];
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch staf_table data.');
+  }
+}
 
 export async function getAllMaxValues() {
   try {
@@ -336,12 +349,12 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-export async function getUser(email: string) {
+async function getUser(email: string): Promise<staf_table | undefined> {
   try {
-    const user = await sql`SELECT * FROM users WHERE email=${email}`;
-    return user.rows[0] as User;
+      const user = await sql<staf_table>`SELECT * FROM staf_table WHERE email_st=${email}`;
+      return user.rows[0];
   } catch (error) {
-    console.error('Failed to fetch user:', error);
-    throw new Error('Failed to fetch user.');
+      console.error('Failed to fetch user:', error);
+      throw new Error('Failed to fetch user.');
   }
 }
